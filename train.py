@@ -79,7 +79,7 @@ def save_checkpoint(state, filename):
     torch.save(state, filename)
 
 def main():
-    model = HARmodel(40, 5)
+    model = HARmodel(1, 5)
 
     # if use_cuda:
     #     model = model.cuda()

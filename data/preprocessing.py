@@ -20,6 +20,7 @@ class HARdataset():
 
 	def __getitem__(self, idx):
 		step = self.var_list[:,idx]
+		step = torch.unsqueeze(step, 0)
 		target = self.labels[idx]
 
 		return step, target, idx
