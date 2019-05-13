@@ -22,7 +22,7 @@ def train(train_loader,
     start_epoch = start_epoch
 
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.95)
-
+    print("Start training...")
     for epoch in range(start_epoch, max_epoch):
         scheduler.step()
         for iteration, (steps, targets, _) in enumerate(train_loader):
@@ -38,8 +38,8 @@ def train(train_loader,
             loss.backward()
             optimizer.step()
 
-            if iteration % 20 == 0:
-                print("iter: {iter}, loss: {loss}".format(iter=iteration,
+            # if iteration % 20 == 0:
+            print("iter: {iter}, loss: {loss}".format(iter=iteration,
                                                           loss=loss))
 
         if epoch % 2 == 0:
