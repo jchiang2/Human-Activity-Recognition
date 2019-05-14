@@ -33,6 +33,7 @@ def main():
         type=str,
     )
     args = parser.parse_args()
+    assert type(args.checkpoint) is str, "Please input valid path to checkpoint"
 
     params = sp().params
 
@@ -45,7 +46,7 @@ def main():
         print("=> loaded checkpoint '{}'".format(args.checkpoint))
 
     else:
-        print("=> no checkpoint found at '{}'".format(params["resume"]))
+        print("=> no checkpoint found at '{}'".format(args.checkpoint))
         return
 
     dataset = HARdataset(params["root"])
