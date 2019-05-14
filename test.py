@@ -33,7 +33,7 @@ def main():
         type=str,
     )
     args = parser.parse_args()
-    assert type(args.checkpoint) is str, "Please input valid path to checkpoint"
+    assert type(args.checkpoint) is str, "Please input path to checkpoint"
 
     params = sp().params
 
